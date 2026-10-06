@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Kids: A Beginner's Guide to Learning Coding and Building Fun Projects</title>
+<meta name="description" content="Meet Pip the snake and start Python for kids. A friendly beginner's guide to learning coding, the best age to start, core ideas, and six fun projects to build.">
+<meta name="theme-color" content="#BEE9FF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Python for Kids: A Beginner's Guide to Learning Coding and Building Fun Projects">
+<meta property="og:description" content="Try a mini code toy, explore six starter projects, and find the beginner's guide, free demo, course and contact links.">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Python for Kids: A Beginner's Guide to Learning Coding and Building Fun Projects",
+  "description": "A friendly beginner's guide to Python for kids, with core ideas explained through everyday examples and six fun starter projects.",
+  "audience": { "@type": "PeopleAudience", "suggestedMinAge": 5 },
+  "inLanguage": "en"
+}
+</script>
+<style>
+:root{
+  --sky:#BEE9FF;
+  --sun:#FFD23F;
+  --pink:#FF6FA5;
+  --grass:#2FCB78;
+  --grape:#6C4BFF;
+  --ink:#1E1B4B;
+  --cream:#FFF6DA;
+  --white:#FFFFFF;
+  --dots:radial-gradient(rgba(255,255,255,.65) 2px, transparent 2.5px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{
+  margin:0;
+  font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:1.05rem;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--sky);
+  background-image:var(--dots);
+  background-size:28px 28px;
+}
+h1,h2,h3{font-family:'Fredoka','Nunito',system-ui,sans-serif;line-height:1.1;margin:0}
+p{margin:0 0 1rem}
+a{color:inherit}
+img,svg{max-width:100%}
+:focus-visible{outline:4px solid var(--grape);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;padding:12px 12px 0}
+.bar{
+  max-width:1120px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--white);border:3px solid var(--ink);border-radius:999px;
+  padding:8px 10px 8px 14px;box-shadow:4px 4px 0 var(--ink);
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;white-space:nowrap}
+.brand-badge{width:38px;height:38px;border-radius:50%;background:var(--grass);border:3px solid var(--ink);display:grid;place-items:center;font-size:1.15rem}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{font-weight:800;text-decoration:none;padding:6px 14px;border-radius:999px;font-size:.98rem}
+.nav a:hover{background:var(--sun)}
+.nav .btn{padding:8px 18px;font-size:1rem;margin-left:6px;white-space:nowrap}
+.nav .btn:hover{background:var(--pink)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;
+  padding:13px 24px;border:3px solid var(--ink);border-radius:999px;
+  text-decoration:none;color:var(--ink);background:var(--white);
+  box-shadow:4px 4px 0 var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease;
+  cursor:pointer;
+}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+.btn.sun{background:var(--sun)}
+.btn.pink{background:var(--pink)}
+.btn.grass{background:var(--grass)}
+
+/* sections */
+.sec{position:relative;padding:76px 0}
+.sec::before{
+  content:"";position:absolute;left:0;right:0;top:-47px;height:48px;
+  background-repeat:repeat-x;background-size:96px 48px;
+  background-image:var(--wave);pointer-events:none;
+}
+.sec.cream{background:var(--cream);--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 48'%3E%3Cpath d='M0 48V26Q24 2 48 26T96 26V48Z' fill='%23FFF6DA'/%3E%3C/svg%3E")}
+.sec.white{background:var(--white);--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 48'%3E%3Cpath d='M0 48V26Q24 2 48 26T96 26V48Z' fill='%23FFFFFF'/%3E%3C/svg%3E")}
+.sec.skyblue{background:var(--sky);background-image:var(--dots);background-size:28px 28px;--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 48'%3E%3Cpath d='M0 48V26Q24 2 48 26T96 26V48Z' fill='%23BEE9FF'/%3E%3C/svg%3E")}
+.sec.sunny{background:var(--sun);--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 48'%3E%3Cpath d='M0 48V26Q24 2 48 26T96 26V48Z' fill='%23FFD23F'/%3E%3C/svg%3E")}
+.sec.grapey{background:var(--grape);color:var(--white);--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 48'%3E%3Cpath d='M0 48V26Q24 2 48 26T96 26V48Z' fill='%236C4BFF'/%3E%3C/svg%3E")}
+.sec.inky{background:var(--ink);color:var(--white);--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 48'%3E%3Cpath d='M0 48V26Q24 2 48 26T96 26V48Z' fill='%231E1B4B'/%3E%3C/svg%3E")}
+.sec-head{max-width:680px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:12px}
+.sec-head p{font-size:1.15rem;margin:0}
+
+/* hero */
+.hero{padding:40px 0 70px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.chip{
+  display:inline-block;background:var(--white);border:3px solid var(--ink);border-radius:14px;
+  padding:4px 14px;font-weight:800;font-size:.95rem;transform:rotate(-2deg);
+}
+.hero h1{
+  font-size:clamp(3.2rem,10vw,6.4rem);margin:20px 0 14px;
+  text-shadow:4px 4px 0 var(--pink);
+}
+.hero .lead{font-family:'Fredoka',sans-serif;font-size:clamp(1.3rem,3vw,1.75rem);font-weight:500;line-height:1.3;margin-bottom:14px;max-width:24ch}
+.hero .text{max-width:48ch;font-size:1.12rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px;margin:26px 0 22px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.facts li{background:rgba(255,255,255,.8);border:2px solid var(--ink);border-radius:12px;padding:3px 12px;font-weight:700;font-size:.92rem}
+.pip-stage{display:flex;flex-direction:column;align-items:center;gap:22px}
+.bubble{
+  position:relative;background:var(--white);border:3px solid var(--ink);border-radius:26px;
+  padding:14px 20px;box-shadow:5px 5px 0 var(--ink);
+  font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.2rem;line-height:1.3;
+  max-width:300px;text-align:center;
+}
+.bubble::after{
+  content:"";position:absolute;bottom:-14px;left:50%;margin-left:-12px;width:22px;height:22px;
+  background:var(--white);border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);
+  transform:rotate(45deg);
+}
+#pip{width:min(100%,360px);height:auto;animation:bob 3.2s ease-in-out infinite}
+#pip.wiggle{animation:wiggle .6s ease-in-out 1}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes wiggle{
+  0%{transform:rotate(0)}20%{transform:rotate(-6deg)}40%{transform:rotate(6deg)}
+  60%{transform:rotate(-4deg)}80%{transform:rotate(3deg)}100%{transform:rotate(0)}
+}
+.deco{position:absolute;font-size:2.4rem;pointer-events:none}
+.deco.d1{top:30px;right:6%}
+.deco.d2{bottom:40px;left:3%}
+
+/* playground */
+.playground{
+  background:var(--white);border:3px solid var(--ink);border-radius:32px;
+  box-shadow:8px 8px 0 var(--ink);padding:30px;
+  display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center;
+}
+.playground h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:10px}
+.field{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.field label{width:100%;font-weight:800}
+.field input{
+  flex:1 1 160px;min-width:0;font:inherit;font-weight:700;padding:12px 16px;
+  border:3px solid var(--ink);border-radius:16px;background:var(--cream);color:var(--ink);
+}
+.code-window{background:var(--ink);color:var(--white);border-radius:20px;overflow:hidden;border:3px solid var(--ink)}
+.code-top{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#34307A;font-weight:700;font-size:.9rem}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.code-body{padding:18px 20px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.02rem;line-height:1.9;overflow-x:auto}
+.k{color:#8BE9FD}.s{color:#FFD23F}.f{color:#FF9CC5}
+.out{border-top:2px dashed #5A55B0;padding:14px 20px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.out small{display:block;font-family:'Nunito',sans-serif;font-weight:800;color:#B9B5FF;margin-bottom:4px}
+.out strong{color:#7CFFB2;font-size:1.15rem}
+
+/* cards */
+.grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{
+  border:3px solid var(--ink);border-radius:28px;padding:26px;
+  box-shadow:6px 6px 0 var(--ink);color:var(--ink);background:var(--white);
+}
+.card h3{font-size:1.5rem;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.icon{
+  width:64px;height:64px;border-radius:50%;border:3px solid var(--ink);background:var(--white);
+  display:grid;place-items:center;font-size:1.9rem;margin-bottom:16px;
+}
+.c-pink{background:#FFC2DB}.c-sun{background:#FFE98F}.c-grass{background:#A8F0C6}.c-sky{background:#B9E6FF}.c-grape{background:#D9CFFF}.c-peach{background:#FFD3B5}
+
+/* ages */
+.steps{align-items:end}
+.step .big{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.6rem;line-height:1}
+.step:nth-child(1){margin-bottom:0}
+.step:nth-child(2){margin-bottom:28px}
+.step:nth-child(3){margin-bottom:56px}
+.note{
+  display:inline-block;margin-top:34px;background:var(--white);border:3px solid var(--ink);border-radius:18px;
+  padding:10px 20px;font-weight:800;box-shadow:4px 4px 0 var(--ink);transform:rotate(-1deg)
+}
+
+/* projects */
+.project{transition:transform .15s ease}
+.project:nth-child(odd){transform:rotate(-1.2deg)}
+.project:nth-child(even){transform:rotate(1.2deg)}
+.project:hover{transform:rotate(0) translateY(-6px)}
+.project .emoji{font-size:3rem;line-height:1;margin-bottom:12px;display:block}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:14px 0 0;list-style:none}
+.tags li{background:var(--white);border:2px solid var(--ink);border-radius:10px;padding:1px 10px;font-weight:800;font-size:.88rem}
+
+/* accordions */
+.acc{max-width:820px}
+details{
+  background:var(--white);border:3px solid var(--ink);border-radius:22px;
+  box-shadow:5px 5px 0 var(--ink);margin-bottom:18px;color:var(--ink);
+}
+summary{
+  cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px 22px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.25rem;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";flex:none;width:34px;height:34px;border-radius:50%;border:3px solid var(--ink);
+  background:var(--pink);display:grid;place-items:center;font-size:1.4rem;line-height:1;
+  transition:transform .2s ease;
+}
+details[open] summary::after{transform:rotate(45deg);background:var(--grass)}
+.answer{padding:0 22px 20px}
+.answer p{margin-bottom:12px}
+pre{
+  margin:0;background:var(--ink);color:var(--white);border-radius:14px;padding:12px 16px;
+  overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.96rem;line-height:1.7;
+}
+
+/* parents */
+.sec.grapey .sec-head p{color:#EDE8FF}
+.sec.grapey .cta-row{margin-bottom:0}
+
+/* links */
+.links{display:grid;grid-template-columns:repeat(6,1fr);gap:26px}
+.links .card{display:block;text-decoration:none;grid-column:span 2;transition:transform .12s ease, box-shadow .12s ease}
+.links .card:nth-child(n+4){grid-column:span 3}
+.links .card:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.links .go{
+  display:inline-block;margin-top:14px;font-family:'Fredoka',sans-serif;font-weight:600;
+  background:var(--white);border:3px solid var(--ink);border-radius:999px;padding:4px 16px;
+}
+
+/* footer */
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+.foot-grid h3{font-size:1.25rem;margin-bottom:12px;color:var(--sun)}
+.foot-grid ul{list-style:none;margin:0;padding:0}
+.foot-grid li{margin-bottom:8px}
+.foot-grid a{text-decoration:none;font-weight:700}
+.foot-grid a:hover{color:var(--sun);text-decoration:underline}
+.foot-brand{display:flex;align-items:center;gap:10px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.5rem;margin-bottom:12px}
+.small-print{margin-top:40px;padding-top:20px;border-top:2px dashed #5A55B0;font-size:.92rem;color:#C9C6FF}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .pip-stage{order:-1}
+  .playground{grid-template-columns:1fr}
+  .links{grid-template-columns:1fr 1fr}
+  .links .card,.links .card:nth-child(n+4){grid-column:span 1}
+  .links .card:last-child{grid-column:span 2}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-grid > :first-child{grid-column:span 2}
+  .deco{display:none}
+}
+@media (max-width:820px){
+  .nav a:not(.btn){display:none}
+  .steps{align-items:stretch}
+  .step:nth-child(n){margin-bottom:0}
+}
+@media (max-width:600px){
+  .sec{padding:60px 0}
+  .links{grid-template-columns:1fr}
+  .links .card,.links .card:nth-child(n+4),.links .card:last-child{grid-column:span 1}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-grid > :first-child{grid-column:span 1}
+  .playground{padding:22px}
+  .project:nth-child(n){transform:none}
+  .brand span.name{font-size:1rem}
+  .brand-badge{width:32px;height:32px;font-size:1rem}
+  .nav .btn{padding:7px 14px;font-size:.95rem;margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Python Playground home">
+      <span class="brand-badge" aria-hidden="true">🐍</span>
+      <span class="name">Python Playground</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#why">Why Python</a>
+      <a href="#ages">Ages</a>
+      <a href="#projects">Projects</a>
+      <a href="#words">Code words</a>
+      <a href="#parents">Parents</a>
+      <a class="btn sun" href="https://justacademyjunior.com/free-demo" target="_blank" rel="noopener noreferrer">Free demo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <span class="deco d1" aria-hidden="true">⭐</span>
+    <span class="deco d2" aria-hidden="true">🎈</span>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="chip">A beginner's guide for curious kids</span>
+        <h1>Python for Kids</h1>
+        <p class="lead">Learn coding and build fun projects, one tiny step at a time.</p>
+        <p class="text">Python reads almost like plain English. Type a line, press run, and watch the computer answer. Start with a simple hello and end up with your very own game.</p>
+        <div class="cta-row">
+          <a class="btn sun" href="https://justacademyjunior.com/blog/python-for-kids-a-beginners-guide-to-learning-coding-and-building-fun-projects" target="_blank" rel="noopener noreferrer">Read the beginner's guide</a>
+          <a class="btn pink" href="https://justacademyjunior.com/free-demo" target="_blank" rel="noopener noreferrer">Book a free demo</a>
+        </div>
+        <ul class="facts">
+          <li>Best for ages 8 to 12</li>
+          <li>No coding experience needed</li>
+          <li>Runs on any ordinary laptop</li>
+        </ul>
+      </div>
+
+      <div class="pip-stage">
+        <div class="bubble" id="pipSays" aria-live="polite">Hi, I'm Pip! Type your name below and press Run.</div>
+        <svg id="pip" viewBox="0 0 350 365" role="img" aria-label="Pip, a friendly green snake wearing a party hat">
+          <path d="M246 312C312 300 306 232 226 226C126 220 52 206 84 146C106 106 168 112 170 156" fill="none" stroke="#1E1B4B" stroke-width="70" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M246 312C312 300 306 232 226 226C126 220 52 206 84 146C106 106 168 112 170 156" fill="none" stroke="#2FCB78" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M246 312C312 300 306 232 226 226C126 220 52 206 84 146C106 106 168 112 170 156" fill="none" stroke="#B6F5D3" stroke-width="16" stroke-linecap="round" stroke-dasharray="1 30"/>
+          <ellipse cx="170" cy="112" rx="64" ry="56" fill="#2FCB78" stroke="#1E1B4B" stroke-width="6"/>
+          <g transform="rotate(-8 170 60)">
+            <polygon points="170,6 140,64 200,64" fill="#FFD23F" stroke="#1E1B4B" stroke-width="5" stroke-linejoin="round"/>
+            <circle cx="170" cy="8" r="9" fill="#FF6FA5" stroke="#1E1B4B" stroke-width="4"/>
+            <path d="M152 44H188" stroke="#FF6FA5" stroke-width="6" stroke-linecap="round"/>
+          </g>
+          <circle cx="146" cy="104" r="17" fill="#fff" stroke="#1E1B4B" stroke-width="4"/>
+          <circle cx="194" cy="104" r="17" fill="#fff" stroke="#1E1B4B" stroke-width="4"/>
+          <circle cx="150" cy="107" r="8" fill="#1E1B4B"/>
+          <circle cx="198" cy="107" r="8" fill="#1E1B4B"/>
+          <circle cx="153" cy="104" r="3" fill="#fff"/>
+          <circle cx="201" cy="104" r="3" fill="#fff"/>
+          <ellipse cx="120" cy="130" rx="10" ry="6" fill="#FF6FA5" opacity=".8"/>
+          <ellipse cx="220" cy="130" rx="10" ry="6" fill="#FF6FA5" opacity=".8"/>
+          <path d="M150 132Q170 152 190 132" fill="none" stroke="#1E1B4B" stroke-width="5" stroke-linecap="round"/>
+          <path d="M170 148V166M170 166L162 176M170 166L178 176" fill="none" stroke="#FF3D5A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="skyblue" style="padding-bottom:76px">
+    <div class="wrap">
+      <div class="playground">
+        <div>
+          <h2>Try it: make Pip say your name</h2>
+          <p>This is how real Python works. You write instructions, press run, and the computer follows them exactly.</p>
+          <div class="field">
+            <label for="kidName">Your name</label>
+            <input id="kidName" type="text" maxlength="14" placeholder="Type here" autocomplete="off">
+            <button class="btn sun" id="runBtn" type="button">Run the code</button>
+          </div>
+        </div>
+        <div class="code-window" aria-label="Example Python code">
+          <div class="code-top">
+            <span class="dot" style="background:#FF6FA5"></span>
+            <span class="dot" style="background:#FFD23F"></span>
+            <span class="dot" style="background:#2FCB78"></span>
+            <span>hello.py</span>
+          </div>
+          <div class="code-body">
+            <div>name <span class="k">=</span> <span class="s">"<span id="codeName">friend</span>"</span></div>
+            <div><span class="f">print</span>(<span class="s">"Hello,"</span>, name)</div>
+          </div>
+          <div class="out">
+            <small>What the computer says</small>
+            <strong id="outText">Hello, friend</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cream" id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Why Python is a great first language</h2>
+        <p>Python was named after a comedy group, not a snake, and it still feels playful. It is also the same language grown ups use for websites, games and artificial intelligence.</p>
+      </div>
+      <div class="grid">
+        <article class="card c-pink">
+          <div class="icon" aria-hidden="true">📖</div>
+          <h3>It reads like English</h3>
+          <p>A line like print("Hello") explains itself, so beginners think about ideas instead of strange symbols.</p>
+        </article>
+        <article class="card c-sky">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <h3>Answers come fast</h3>
+          <p>Change a number, run the program, and see what happens. That quick loop makes learning stick.</p>
+        </article>
+        <article class="card c-grass">
+          <div class="icon" aria-hidden="true">🎨</div>
+          <h3>Build anything</h3>
+          <p>Games, drawings, quizzes, jokes and calculators all start with the same simple building blocks.</p>
+        </article>
+        <article class="card c-sun">
+          <div class="icon" aria-hidden="true">🌱</div>
+          <h3>It grows with you</h3>
+          <p>Skills from a guessing game carry into web projects, data and AI later on. Nothing is wasted.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec skyblue" id="ages">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What is the best age to start?</h2>
+        <p>Readiness matters more than the number on a birthday card. If your child loves puzzles and asks lots of questions, they are probably ready.</p>
+      </div>
+      <div class="grid steps">
+        <article class="card step c-sun">
+          <div class="big">5 to 7</div>
+          <h3>Block coding</h3>
+          <p>Drag and snap colorful pieces together. Kids learn sequences and decisions without any typing.</p>
+        </article>
+        <article class="card step c-pink">
+          <div class="big">8 to 12</div>
+          <h3>First Python</h3>
+          <p>Reading and typing feel comfortable now. Print messages, store things in variables and build small games.</p>
+        </article>
+        <article class="card step c-grass">
+          <div class="big">13 and up</div>
+          <h3>Start fresh, move fast</h3>
+          <p>Older beginners pick up the basics quickly and can reach bigger projects sooner.</p>
+        </article>
+      </div>
+      <span class="note">Good rhythm: 20 to 30 minutes, two or three times a week</span>
+    </div>
+  </section>
+
+  <section class="sec white" id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Six fun projects to build first</h2>
+        <p>Pick one your child cares about. A project they choose beats an assignment every time.</p>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(290px,1fr))">
+        <article class="card project c-sun">
+          <span class="emoji" aria-hidden="true">🔢</span>
+          <h3>Number guessing game</h3>
+          <p>The computer hides a number. You guess, and it says too high or too low.</p>
+          <ul class="tags"><li>variables</li><li>input</li><li>loops</li></ul>
+        </article>
+        <article class="card project c-pink">
+          <span class="emoji" aria-hidden="true">📖</span>
+          <h3>Silly story maker</h3>
+          <p>Type an animal, a place and a snack. Out pops a story about a dragon eating noodles on the moon.</p>
+          <ul class="tags"><li>input</li><li>text</li></ul>
+        </article>
+        <article class="card project c-sky">
+          <span class="emoji" aria-hidden="true">🐢</span>
+          <h3>Turtle drawing</h3>
+          <p>Steer a tiny arrow around the screen and draw squares, spirals and stars.</p>
+          <ul class="tags"><li>loops</li><li>shapes</li></ul>
+        </article>
+        <article class="card project c-grass">
+          <span class="emoji" aria-hidden="true">✊</span>
+          <h3>Rock, paper, scissors</h3>
+          <p>Play against the computer and keep score across several rounds.</p>
+          <ul class="tags"><li>lists</li><li>random</li></ul>
+        </article>
+        <article class="card project c-grape">
+          <span class="emoji" aria-hidden="true">🦖</span>
+          <h3>Your own quiz</h3>
+          <p>Make a quiz about dinosaurs, cricket or space, then challenge your family to beat your score.</p>
+          <ul class="tags"><li>conditions</li><li>score</li></ul>
+        </article>
+        <article class="card project c-peach">
+          <span class="emoji" aria-hidden="true">🧮</span>
+          <h3>Basic calculator</h3>
+          <p>Add, subtract, multiply and divide. Then ask what happens when you divide by zero.</p>
+          <ul class="tags"><li>functions</li><li>decisions</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sunny" id="words">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Code words, explained with everyday things</h2>
+        <p>Almost every program is built from a handful of ideas. Tap one to see how it works.</p>
+      </div>
+      <div class="acc">
+        <details>
+          <summary>Variable: a labeled lunchbox</summary>
+          <div class="answer">
+            <p>A variable is a labeled box that holds information. On Monday the snack box holds an apple, on Tuesday biscuits, but the label stays the same.</p>
+<pre>snack = "apple"
+print(snack)</pre>
+          </div>
+        </details>
+        <details>
+          <summary>Condition: the umbrella rule</summary>
+          <div class="answer">
+            <p>Conditions let a program decide. If it is raining, take an umbrella. Otherwise, wear sunglasses.</p>
+<pre>if weather == "rain":
+    print("Take an umbrella")
+else:
+    print("Wear sunglasses")</pre>
+          </div>
+        </details>
+        <details>
+          <summary>Loop: clap ten times</summary>
+          <div class="answer">
+            <p>A loop repeats an action so you do not have to write it again and again. Three short lines can make a long, impressive result.</p>
+<pre>for i in range(10):
+    print("clap")</pre>
+          </div>
+        </details>
+        <details>
+          <summary>List: a backpack of books</summary>
+          <div class="answer">
+            <p>A list holds several items together. It is perfect for quiz questions, favorite foods or high scores.</p>
+<pre>books = ["maths", "art", "science"]
+print(books[0])</pre>
+          </div>
+        </details>
+        <details>
+          <summary>Function: a recipe card</summary>
+          <div class="answer">
+            <p>A function is a named set of steps you can reuse. Write the recipe once, then use it whenever you like.</p>
+<pre>def make_sandwich():
+    print("Sandwich ready!")
+
+make_sandwich()</pre>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec grapey" id="parents">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>For parents and teachers, no coding needed</h2>
+        <p>The best help is not technical. A calm routine and good questions go a long way.</p>
+      </div>
+      <div class="grid">
+        <article class="card c-sun">
+          <div class="icon" aria-hidden="true">❓</div>
+          <h3>Ask, do not fix</h3>
+          <p>When your child is stuck, ask what they expected, what happened, and what to try next. That is debugging.</p>
+        </article>
+        <article class="card c-pink">
+          <div class="icon" aria-hidden="true">⏰</div>
+          <h3>Short and regular</h3>
+          <p>Two or three short sessions a week beat one long weekend marathon. Keep the space calm and snacks close.</p>
+        </article>
+        <article class="card c-grass">
+          <div class="icon" aria-hidden="true">🔍</div>
+          <h3>Welcome the red text</h3>
+          <p>Error messages are clues, not scoldings. Read the line number together and look one line above it.</p>
+        </article>
+      </div>
+      <div class="cta-row" style="margin-top:36px">
+        <a class="btn sun" href="https://justacademyjunior.com/blog/python-for-kids-a-beginners-guide-to-learning-coding-and-building-fun-projects" target="_blank" rel="noopener noreferrer">Read the full beginner's guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cream" id="links">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Keep exploring</h2>
+        <p>Everything you need for the next step, in one place.</p>
+      </div>
+      <div class="links">
+        <a class="card c-sky" href="https://justacademyjunior.com/blog/python-for-kids-a-beginners-guide-to-learning-coding-and-building-fun-projects" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden="true">📚</div>
+          <h3>Read the full guide</h3>
+          <p>Examples, projects and parent tips in one friendly walkthrough.</p>
+          <span class="go">Open the guide</span>
+        </a>
+        <a class="card c-sun" href="https://justacademyjunior.com/free-demo" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden="true">🎁</div>
+          <h3>Try a free demo</h3>
+          <p>See a first Python lesson in action before you decide anything.</p>
+          <span class="go">Book a demo</span>
+        </a>
+        <a class="card c-pink" href="https://justacademyjunior.com/courses/python-programming" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden="true">🚀</div>
+          <h3>Python programming course</h3>
+          <p>A structured path from the first print line to bigger projects.</p>
+          <span class="go">See the course</span>
+        </a>
+        <a class="card c-grass" href="https://www.justacademy.co/course-detail/mumbai/python-training-in-mumbai" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden="true">🏙️</div>
+          <h3>Python training in Mumbai</h3>
+          <p>Looking for Python classes nearby? See the course details for Mumbai.</p>
+          <span class="go">View details</span>
+        </a>
+        <a class="card c-grape" href="https://justacademyjunior.com/contact" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden="true">💬</div>
+          <h3>Contact us</h3>
+          <p>Questions about ages, levels or getting started? Say hello.</p>
+          <span class="go">Get in touch</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec white" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Quick answers for curious grown ups</h2>
+      </div>
+      <div class="acc">
+        <details>
+          <summary>Is Python really easy for kids?</summary>
+          <div class="answer"><p>For most children, yes. Its readable style lets beginners focus on ideas instead of complicated symbols, and quick feedback keeps them interested.</p></div>
+        </details>
+        <details>
+          <summary>Does my child need to be good at math?</summary>
+          <div class="answer"><p>No. Basic arithmetic is enough to begin, and coding often builds math confidence because numbers do real work inside programs.</p></div>
+        </details>
+        <details>
+          <summary>Do we need a special computer?</summary>
+          <div class="answer"><p>No. An ordinary laptop or desktop works, and online editors can run Python in a web browser with nothing to install.</p></div>
+        </details>
+        <details>
+          <summary>What if my child gets frustrated with errors?</summary>
+          <div class="answer"><p>Treat errors as clues. Read the message slowly, check the line it points to, and change one small thing at a time. Frustration fades as confidence grows.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="sec inky">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="brand-badge" aria-hidden="true">🐍</span> Python Playground</div>
+        <p>A friendly corner of the internet for young coders and the grown ups who cheer for them.</p>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="https://justacademyjunior.com/blog/python-for-kids-a-beginners-guide-to-learning-coding-and-building-fun-projects" target="_blank" rel="noopener noreferrer">Beginner's guide</a></li>
+          <li><a href="https://justacademyjunior.com/free-demo" target="_blank" rel="noopener noreferrer">Free demo</a></li>
+          <li><a href="https://justacademyjunior.com/courses/python-programming" target="_blank" rel="noopener noreferrer">Python programming course</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Say hello</h3>
+        <ul>
+          <li><a href="https://www.justacademy.co/course-detail/mumbai/python-training-in-mumbai" target="_blank" rel="noopener noreferrer">Python training in Mumbai</a></li>
+          <li><a href="https://justacademyjunior.com/contact" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="small-print">Python is a trademark of the Python Software Foundation. Made with curiosity for young coders. 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var input = document.getElementById('kidName');
+  var run = document.getElementById('runBtn');
+  var codeName = document.getElementById('codeName');
+  var out = document.getElementById('outText');
+  var bubble = document.getElementById('pipSays');
+  var pip = document.getElementById('pip');
+
+  function cleanName() {
+    var v = input.value.trim().slice(0, 14);
+    return v || 'friend';
+  }
+  function go() {
+    var n = cleanName();
+    codeName.textContent = n;
+    out.textContent = 'Hello, ' + n;
+    bubble.textContent = 'Hello, ' + n + '! You just ran real Python.';
+    pip.classList.remove('wiggle');
+    void pip.getBoundingClientRect();
+    pip.classList.add('wiggle');
+  }
+  input.addEventListener('input', function () { codeName.textContent = cleanName(); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); go(); }
+  });
+  run.addEventListener('click', go);
+  pip.addEventListener('animationend', function (e) {
+    if (e.animationName === 'wiggle') { pip.classList.remove('wiggle'); }
+  });
+})();
+</script>
+</body>
+</html>
